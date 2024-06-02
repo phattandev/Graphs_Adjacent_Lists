@@ -48,7 +48,7 @@ bool docDanhSachKe(const char* textFile, DanhSachKe& ds) {
 	}
 }
 
-void xuatDanhSachKe(const char* textFile, DanhSachKe ds) {
+void xuatDanhSachKe(DanhSachKe ds) {
 	for (int i = 0; i < ds.sodinh; i++) {
 		cout << "(" << i << "): ";
 		Node* p = ds.dsk[i];
@@ -108,7 +108,7 @@ int main() {
 	DanhSachKe danhSach;
 	if (docDanhSachKe("TextDanhSachKe.txt", danhSach)) {
 		cout << "Danh Sach Ke:" << endl;
-		xuatDanhSachKe("TextDanhSachKe.txt", danhSach);
+		xuatDanhSachKe(danhSach);
 		cout << endl;
 	}
 	else {
@@ -123,7 +123,7 @@ int main() {
 
 	int v, u;
 	trongSoLonNhat(danhSach, v, u);
-	cout << "\nDinh co trong so lon nhat: (" << v << "," << u << ")" << " voi trong so la 10. ";//Ghi chu de khong nham lan
+	cout << "\nDinh co trong so lon nhat: (" << v << "," << u << ")";
 	cout << endl << endl;
 	return 0;
 }
